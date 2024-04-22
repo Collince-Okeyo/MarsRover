@@ -20,6 +20,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.dev.ramgdev.roversmars.domain.model.roverUiModelList
+import timber.log.Timber
 
 @Composable
 fun RoverList(
@@ -69,6 +70,7 @@ fun Rover(
             Text(text = "Credit: NASA/JPL", fontSize = 8.sp)
             Text(text = "Landing date: $landingDate", fontSize = 12.sp)
             Text(text = "Distance travel: $distanceTravelled", fontSize = 12.sp)
+    Timber.d("Rover Name: $name")
         }
     }
 

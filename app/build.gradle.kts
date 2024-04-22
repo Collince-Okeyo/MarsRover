@@ -100,4 +100,7 @@ dependencies {
 
     // Compose lifecycle
     implementation("androidx.lifecycle:lifecycle-runtime-compose:2.7.0")
+
+    // Timber for logging
+    implementation("com.jakewharton.timber:timber:5.0.1")
 }

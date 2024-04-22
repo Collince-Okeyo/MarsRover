@@ -12,6 +12,7 @@ import com.dev.ramgdev.roversmars.nav.Destinations.Manifest
 import com.dev.ramgdev.roversmars.ui.theme.MarsRoverTheme
 import com.dev.ramgdev.roversmars.ui.theme.view.ManifestScreen
 import com.dev.ramgdev.roversmars.ui.theme.view.RoverList
+import timber.log.Timber
 
 @Composable
 fun NavCompose() {
@@ -26,8 +27,11 @@ fun NavCompose() {
                 }
             }
             composable(Manifest) {backStackEntry ->
+                val roverName = backStackEntry.arguments?.getString("roverName")?.removeSurrounding("{", "}")
+                Timber.d("NavCompose Rover Name: $roverName")
                 ManifestScreen(
-                    roverName = backStackEntry.arguments?.getString("roverName"),
+//                    roverName = backStackEntry.arguments?.getString("roverName"),
+                    roverName = roverName,
                     marsRoverManifestViewModel = hiltViewModel()
                 )
             }
