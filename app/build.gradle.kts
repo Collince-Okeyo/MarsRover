@@ -73,6 +73,7 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
+    implementation("androidx.compose.material:material:1.6.6")
     // Compose navigation
     implementation("androidx.navigation:navigation-compose:$nav_version")
 
@@ -103,4 +104,7 @@ dependencies {
 
     // Timber for logging
     implementation("com.jakewharton.timber:timber:5.0.1")
+
+    // Coil
+    implementation("io.coil-kt:coil-compose:2.6.0")
 }
