@@ -23,9 +23,10 @@ import com.dev.ramgdev.roversmars.domain.model.roverUiModelList
 
 @Composable
 fun RoverList(
+    modifier: Modifier,
     onclick: (roverName: String) -> Unit
 ) {
-    Surface(color = MaterialTheme.colorScheme.background, modifier = Modifier.fillMaxSize()) {
+    Surface(color = MaterialTheme.colorScheme.background, modifier = modifier.fillMaxSize()) {
         LazyColumn {
             items(count = roverUiModelList.size, itemContent = { index ->
                 Rover(
@@ -43,7 +44,7 @@ fun RoverList(
 @Preview
 @Composable
 fun RoverPreview() {
-    RoverList() {}
+//    RoverList() {}
 }
 
 @Composable
