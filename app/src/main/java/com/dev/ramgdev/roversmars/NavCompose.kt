@@ -111,7 +111,8 @@ fun NavCompose() {
                 }
                 composable(Saved) {
                     PhotoListSavedScreen(
-                        modifier = modifier
+                        modifier = modifier,
+                        marsRoverSavedViewModel = hiltViewModel()
                     )
                 }
             }

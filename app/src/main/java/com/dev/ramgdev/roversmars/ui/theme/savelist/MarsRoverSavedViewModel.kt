@@ -1,4 +1,4 @@
-package com.dev.ramgdev.roversmars.ui.theme.photolist
+package com.dev.ramgdev.roversmars.ui.theme.savelist
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -13,20 +13,19 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class MarsRoverPhotoViewModel @Inject constructor(
+class MarsRoverSavedViewModel @Inject constructor(
     private val marsRoverPhotoRepo: MarsRoverPhotoRepo
 ) : ViewModel() {
-    private val _roverPhotoUiState: MutableStateFlow<RoverPhotoUiState> =
+    private val _marsPhotoUiSavedState: MutableStateFlow<RoverPhotoUiState> =
         MutableStateFlow(RoverPhotoUiState.Loading)
 
-    val roverPhotoUiState: StateFlow<RoverPhotoUiState>
-        get() = _roverPhotoUiState
+    val marsPhotoUiSavedState: StateFlow<RoverPhotoUiState>
+        get() = _marsPhotoUiSavedState
 
-    fun getMarsRoverPhoto(roverName: String, sol: String) {
+    fun getAllSaved() {
         viewModelScope.launch {
-            _roverPhotoUiState.value = RoverPhotoUiState.Loading
-            marsRoverPhotoRepo.getMarsRoverPhoto(roverName, sol).collect {
-                _roverPhotoUiState.value = it
+            marsRoverPhotoRepo.getAllSaved().collect {
+                _marsPhotoUiSavedState.value = it
             }
         }
     }

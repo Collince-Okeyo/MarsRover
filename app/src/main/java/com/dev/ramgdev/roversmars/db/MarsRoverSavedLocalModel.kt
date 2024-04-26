@@ -11,5 +11,5 @@ data class MarsRoverSavedLocalModel(
     @field:SerializedName("img_src") val imgSrc: String = "",
     @field:SerializedName("sol") val sol: String = "",
     @field:SerializedName("earth_date") val earthDate:String = "",
-    @field:SerializedName("camera_full_name") val cameraFullname: String
+    @field:SerializedName("camera_full_name") val cameraFullName: String
 )
