@@ -64,7 +64,8 @@ fun Photo(
 
                 Text(
                     text = roverPhotoUiModel.roverName,
-                    modifier = Modifier.padding(16.dp)
+                    modifier = Modifier.padding(16.dp),
+                    style = MaterialTheme.typography.titleMedium
                 )
             }
 
@@ -74,9 +75,18 @@ fun Photo(
                 modifier = Modifier.height(300.dp)
             )
 
-            Text(text = stringResource(id = R.string.sol, roverPhotoUiModel.sol))
-            Text(text = stringResource(id = R.string.earth_date, roverPhotoUiModel.earthDate))
-            Text(text = roverPhotoUiModel.cameraFullName)
+            Text(
+                text = stringResource(id = R.string.sol, roverPhotoUiModel.sol),
+                style = MaterialTheme.typography.bodySmall
+            )
+            Text(
+                text = stringResource(id = R.string.earth_date, roverPhotoUiModel.earthDate),
+                style = MaterialTheme.typography.bodySmall
+            )
+            Text(
+                text = roverPhotoUiModel.cameraFullName,
+                style = MaterialTheme.typography.bodySmall
+            )
         }
     }
 }

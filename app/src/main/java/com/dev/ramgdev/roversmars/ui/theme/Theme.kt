@@ -56,7 +56,7 @@ fun MarsRoverTheme(
 
     MaterialTheme(
         colorScheme = colorScheme,
-        typography = Typography,
+        typography = MarsRoverTypography,
         content = content
     )
 }

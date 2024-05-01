@@ -1,6 +1,7 @@
 package com.dev.ramgdev.roversmars
 
 import android.annotation.SuppressLint
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Text
 import androidx.compose.material3.Icon
@@ -11,6 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -46,7 +48,7 @@ fun NavCompose() {
     MarsRoverTheme {
         Scaffold(
             bottomBar = {
-                NavigationBar {
+                NavigationBar(modifier = Modifier.background(Color.Blue)) {
                     val backStackEntry by rememberNavController().currentBackStackEntryAsState()
                     val currentDestination = backStackEntry?.destination
 
