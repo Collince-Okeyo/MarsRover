@@ -1,5 +1,11 @@
 package com.dev.ramgdev.roversmars.ui.theme.view
 
+import androidx.compose.animation.AnimatedContent
+import androidx.compose.animation.ExperimentalAnimationApi
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.scaleIn
+import androidx.compose.animation.scaleOut
+import androidx.compose.animation.with
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
@@ -39,11 +45,13 @@ fun PhotoList(
     }
 }
 
+@OptIn(ExperimentalAnimationApi::class)
 @Composable
 fun Photo(
     roverPhotoUiModel: RoverPhotoUiModel,
     onClick: (roverPhotoUiModel: RoverPhotoUiModel) -> Unit
 ) {
+    val duration = 500
     Card(modifier = Modifier
         .padding(16.dp)
         .clickable {
@@ -52,15 +60,23 @@ fun Photo(
         Column(modifier = Modifier.padding(16.dp)) {
             Row(modifier = Modifier.fillMaxWidth()) {
 
-                Image(
-                    painter = painterResource(
-                        id = if (roverPhotoUiModel.isSaved) {
-                            R.drawable.ic_save
-                        } else {
-                            R.drawable.ic_outline_save
-                        }
-                    ), contentDescription = "save icon"
-                )
+                AnimatedContent(targetState = roverPhotoUiModel.isSaved,
+                    transitionSpec = {
+                        scaleIn(animationSpec = tween(durationMillis = duration, delayMillis = duration)) with
+                                scaleOut(animationSpec = tween(durationMillis = duration))
+                    }
+
+                ) { targetState ->
+                    Image(
+                        painter = painterResource(
+                            id = if (targetState) {
+                                R.drawable.ic_save
+                            } else {
+                                R.drawable.ic_save_outline
+                            }
+                        ), contentDescription = "save icon"
+                    )
+                }
 
                 Text(
                     text = roverPhotoUiModel.roverName,

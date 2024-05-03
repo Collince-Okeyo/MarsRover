@@ -2,6 +2,9 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
+      <entry key="ExampleInstrumentedTest">
+        <State />
+      </entry>
       <entry key="ManifestScreenPreview">
         <State>
           <targetSelectedWithDropDown>
@@ -18,22 +21,6 @@
           <timeTargetWasSelectedWithDropDown value="2024-04-30T15:16:08.628207600Z" />
         </State>
       </entry>
-      <entry key="RoverPreview">
-        <State>
-          <runningDeviceTargetSelectedWithDropDown>
-            <Target>
-              <type value="RUNNING_DEVICE_TARGET" />
-              <deviceKey>
-                <Key>
-                  <type value="VIRTUAL_DEVICE_PATH" />
-                  <value value="C:\Users\Attain\.android\avd\Pixel_6_API_33.avd" />
-                </Key>
-              </deviceKey>
-            </Target>
-          </runningDeviceTargetSelectedWithDropDown>
-          <timeTargetWasSelectedWithDropDown value="2024-04-20T20:59:38.537567400Z" />
-        </State>
-      </entry>
       <entry key="app">
         <State>
           <targetSelectedWithDropDown>
@@ -47,7 +34,7 @@
               </deviceKey>
             </Target>
           </targetSelectedWithDropDown>
-          <timeTargetWasSelectedWithDropDown value="2024-05-01T15:24:47.621239300Z" />
+          <timeTargetWasSelectedWithDropDown value="2024-05-03T13:40:03.236532Z" />
         </State>
       </entry>
     </value>
